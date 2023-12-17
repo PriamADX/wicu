@@ -1,0 +1,44 @@
+            - nom : Configurer Java JDK
+  utilise : actions/setup-java@v4.0.0
+  avec:
+    # La version Java à configurer. Prend une version Java entière ou semestrielle. Voir des exemples de syntaxe prise en charge dans le fichier README
+    version java : # facultatif
+    # Le chemin d'accès au fichier `.java-version`. Voir des exemples de syntaxe prise en charge dans le fichier README
+    fichier-version-java : # facultatif
+    # Distribution Java. Voir la liste des distributions prises en charge dans le fichier README
+    distribution:
+    # Le type de package (jdk, jre, jdk+fx, jre+fx)
+    java-package : # facultatif, la valeur par défaut est jdk
+    # L'architecture du package (par défaut, l'architecture du coureur d'action)
+    architecture : # facultatif
+    # Chemin vers l'emplacement du JDK compressé
+    jdkFile : # facultatif
+    # Définissez cette option si vous souhaitez que l'action vérifie la dernière version disponible qui satisfait aux spécifications de version
+    check-latest : # facultatif
+    # ID du référentiel distributionManagement dans le fichier pom.xml. La valeur par défaut est `github`
+    identifiant du serveur : # facultatif, la valeur par défaut est github
+    # Nom de la variable d'environnement pour le nom d'utilisateur pour l'authentification auprès du référentiel Apache Maven. La valeur par défaut est $GITHUB_ACTOR
+    nom d'utilisateur du serveur : # facultatif, la valeur par défaut est GITHUB_ACTOR
+    # Nom de la variable d'environnement pour le mot de passe ou le jeton pour l'authentification auprès du référentiel Apache Maven. La valeur par défaut est $GITHUB_TOKEN
+    mot de passe du serveur : # facultatif, la valeur par défaut est GITHUB_TOKEN
+    # Chemin vers l'endroit où le fichier settings.xml sera écrit. La valeur par défaut est ~/.m2.
+    chemin des paramètres : # facultatif
+    # Écrasez le fichier settings.xml s'il existe. La valeur par défaut est « vrai ».
+    overwrite-settings : # facultatif, la valeur par défaut est vraie
+    # Clé privée GPG à importer. La valeur par défaut est une chaîne vide.
+    gpg-private-key : # facultatif
+    # Nom de la variable d'environnement pour la phrase secrète de la clé privée GPG. La valeur par défaut est $GPG_PASSPHRASE.
+    Phrase secrète gpg : # facultatif
+    # Nom de la plateforme de build pour mettre en cache les dépendances. Cela peut être "maven", "gradle" ou "maven". ou "sbt".
+    cache : # facultatif
+    # Le chemin d'accès à un fichier de dépendances : pom.xml, build.gradle, build.sbt, etc. Cette option peut être utilisée avec l'option `cache`. Si cette option est omise, l'action recherche le fichier de dépendances dans l'ensemble du référentiel. Cette option prend en charge les caractères génériques et une liste de noms de fichiers pour la mise en cache de plusieurs dépendances.
+    chemin de dépendance du cache : # facultatif
+    # Solution de contournement pour transmettre le statut du travail pour publier l'étape du travail. Cette variable n'est pas destinée à un réglage manuel
+    job-status : # facultatif, la valeur par défaut est ${{ job.status }}
+    # Le jeton utilisé pour s'authentifier lors de la récupération des manifestes de version hébergés sur github.com, comme pour la version Microsoft d'OpenJDK. Lors de l'exécution de cette action sur github.com, la valeur par défaut est suffisante. Lorsque vous utilisez GHES, vous pouvez transmettre un jeton d'accès personnel à github.com si vous rencontrez une limitation de débit.
+    jeton : # facultatif, la valeur par défaut est ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    # Nom de l'ID de la chaîne d'outils Maven si le nom par défaut de "${distribution}_${java-version}" n'est pas recherché. Voir des exemples de syntaxe prise en charge dans le fichier d'utilisation avancée
+    mvn-toolchain-id : # facultatif
+    # Nom du fournisseur de la chaîne d'outils Maven si le nom par défaut de "${distribution}" n'est pas recherché. Voir des exemples de syntaxe prise en charge dans le fichier d'utilisation avancée
+    mvn-toolchain-vendor : # facultatif
+          
